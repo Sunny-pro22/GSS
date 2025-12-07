@@ -1,0 +1,285 @@
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+.loading-content {
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+}
+
+.company-title {
+  margin-bottom: 3rem;
+}
+
+.company-title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #00d4ff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.company-title p {
+  font-size: 1rem;
+  color: #888;
+  margin: 0.5rem 0 0 0;
+  letter-spacing: 1px;
+}
+
+.mechanical-system {
+  position: relative;
+  height: 200px;
+  margin: 2rem 0;
+}
+
+/* Gears System */
+.gears-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.gear {
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #00d4ff;
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.gear-large {
+  width: 80px;
+  height: 80px;
+}
+
+.gear-medium {
+  width: 60px;
+  height: 60px;
+}
+
+.gear-small {
+  width: 40px;
+  height: 40px;
+}
+
+.gear-teeth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-conic-gradient(
+      from 0deg,
+      #00d4ff 0deg 15deg,
+      transparent 15deg 30deg
+    );
+  border-radius: 50%;
+  mask: radial-gradient(transparent 40%, black 41%);
+}
+
+.gear-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  height: 20%;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Piston System */
+.piston-system {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.piston-cylinder {
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(90deg, #333, #222);
+  border: 2px solid #00d4ff;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.piston-rod {
+  width: 30px;
+  height: 40px;
+  background: linear-gradient(90deg, #00d4ff, #0099ff);
+  border-radius: 15px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+.piston-base {
+  width: 80px;
+  height: 10px;
+  background: #00d4ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Conveyor System */
+.conveyor-system {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+}
+
+.conveyor-track {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #333, #444, #333);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.conveyor-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 255, 0.4),
+    transparent
+  );
+  animation: conveyorShine 2s linear infinite;
+}
+
+.conveyor-belt {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+}
+
+.conveyor-item {
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  background: linear-gradient(45deg, #00d4ff, #0099ff);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.conveyor-item:nth-child(1) { left: 0; }
+.conveyor-item:nth-child(2) { left: 100px; }
+.conveyor-item:nth-child(3) { left: 200px; }
+
+/* Progress System */
+.progress-container {
+  margin: 3rem 0 1rem 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #0099ff);
+  border-radius: 3px;
+  width: 0%;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.loading-message {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes conveyorShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-title h1 {
+    font-size: 2rem;
+  }
+  
+  .gear-large {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .gear-medium {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .gear-small {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .conveyor-system {
+    width: 250px;
+  }
+}
