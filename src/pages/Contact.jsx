@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useSEO } from '../Hooks/useSEO';
-import { useTheme } from '../Hooks/useTHEME';
+import { useTheme } from '../Hooks/useTheme';
 import FloatingGearsBackground from '../components/FloatingGearsBackground';
 import './Contact.css';
 

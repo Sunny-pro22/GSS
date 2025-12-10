@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
-import { useTheme } from '../Hooks/useTHEME';
+import { useTheme } from '../Hooks/useTheme';
 import BusinessGrowth3D from './BusinessGrowth3D';
 import SEOOptimization3D from './SEOOptimization3D';
 import DigitalMarketing3D from './DigitalMarketing3D';

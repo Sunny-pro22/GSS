@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useTheme } from '../Hooks/useTHEME';
+import { useTheme } from '../Hooks/useTheme';
 import ThemeToggle from './ThemeToggle';
 import './Navigation.css';
 
