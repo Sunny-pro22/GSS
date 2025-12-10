@@ -5,7 +5,7 @@ import CustomCursor from './components/CustomCursor';
 import Loading from './components/Loading';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
-import Services from './Pages/Services';
+import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Terms from './pages/Term';
