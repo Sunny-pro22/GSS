@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider } from './Context/ThemeContext';
 import CustomCursor from './components/CustomCursor';
 import Loading from './components/Loading';
 import Navigation from './components/Navigation';
