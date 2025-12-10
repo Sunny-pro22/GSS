@@ -1,117 +1,138 @@
-// src/components/Footer.jsx
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../Hooks/useTHEME';
+import FloatingGearsBackground from './FloatingGearsBackground';
+import ThemeToggle from './ThemeToggle';
 import './Footer.css';
 
 const Footer = () => {
-  const [showBackToTop, setShowBackToTop] = useState(false);
-  const [email, setEmail] = useState('');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 400);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      alert('Thank you for subscribing to our newsletter!');
-      setEmail('');
-    }
-  };
+  const { isDarkTheme } = useTheme();
 
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
+    <footer className="app-footer">
+      <FloatingGearsBackground />
+      
+      <div className="footer-content">
+        <div className="footer-main">
           <div className="footer-section">
-            <h3>BRP Technology</h3>
-            <p>
-              Transforming businesses with cutting-edge digital marketing solutions. 
-              We help you grow your online presence and achieve remarkable digital success.
-            </p>
-            <div className="social-links">
-              <a href="#" aria-label="Facebook" title="Facebook">📘</a>
-              <a href="#" aria-label="Twitter" title="Twitter">🐦</a>
-              <a href="#" aria-label="Instagram" title="Instagram">📷</a>
-              <a href="#" aria-label="LinkedIn" title="LinkedIn">💼</a>
-              <a href="#" aria-label="YouTube" title="YouTube">📺</a>
+            <div className="footer-logo">
+              <div className="footer-logo-gear">
+                <div className="gear-teeth-small"></div>
+              </div>
+              <div>
+                <h2>BRP TECHNOLOGY</h2>
+                <span className="logo-subtitle">PVT LIMITED</span>
+                <p className="footer-tagline">
+                  Helping businesses grow through digital excellence and strategic optimization.
+                </p>
+              </div>
             </div>
             
-            <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
-              <input
-                type="email"
-                className="newsletter-input"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button type="submit" className="newsletter-btn">
-                Subscribe
-              </button>
-            </form>
+            <div className="footer-theme">
+              <ThemeToggle />
+              <span>Switch to {isDarkTheme ? 'Light' : 'Dark'} Theme</span>
+            </div>
           </div>
           
           <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#careers">Careers</a></li>
-            </ul>
+            <h3>Quick Links</h3>
+            <nav className="footer-nav">
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>Services</Link>
+              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About Us</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
+            </nav>
           </div>
           
           <div className="footer-section">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#seo">SEO Services</a></li>
-              <li><a href="#smo">SMO Services</a></li>
-              <li><a href="#web-design">Web Design</a></li>
-              <li><a href="#ppc">PPC Management</a></li>
-              <li><a href="#content">Content Marketing</a></li>
-              <li><a href="#branding">Branding</a></li>
-            </ul>
+            <h3>Our Services</h3>
+            <nav className="footer-nav">
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>Business Profile Optimization</Link>
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>SEO Services</Link>
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>Digital Marketing</Link>
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>Analytics & Reporting</Link>
+            </nav>
           </div>
           
           <div className="footer-section">
-            <h4>Contact Info</h4>
+            <h3>Legal</h3>
+            <nav className="footer-nav">
+              <Link to="/terms" onClick={() => window.scrollTo(0, 0)}>Terms & Conditions</Link>
+              <Link to="/privacy" onClick={() => window.scrollTo(0, 0)}>Privacy Policy</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Service Agreement</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Cookie Policy</Link>
+            </nav>
+          </div>
+          
+          <div className="footer-section">
+            <h3>Connect With Us</h3>
+            <div className="social-links">
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-link"
+                aria-label="Visit our LinkedIn"
+              >
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-link"
+                aria-label="Visit our Twitter"
+              >
+                <i className="fab fa-twitter"></i> Twitter
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-link"
+                aria-label="Visit our Facebook"
+              >
+                <i className="fab fa-facebook"></i> Facebook
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="social-link"
+                aria-label="Visit our Instagram"
+              >
+                <i className="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+            
             <div className="contact-info">
-              <p>📧 info@brptechnology.com</p>
-              <p>📞 +1 (555) 123-4567</p>
-              <p>📍 123 Business Ave, Suite 100<br />New York, NY 10001</p>
-              <p>🕒 Mon - Fri: 9AM - 6PM EST</p>
+              <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+              <p><i className="fas fa-envelope"></i> info@brptechnology.com</p>
+              <p><i className="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</p>
+              <p><i className="fas fa-map-marker-alt"></i> 123 Business Street, Tech City</p>
             </div>
           </div>
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} BRP Technology Pvt Limited. All rights reserved.</p>
-          <div className="footer-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#cookies">Cookie Policy</a>
-            <a href="#sitemap">Sitemap</a>
+          <div className="copyright">
+            <p>&copy; Copyright 2025-2028 BRP Technology Pvt Limited. All rights reserved.</p>
+            <p className="copyright-sub">Business Growth Specialists | Digital Excellence Partners</p>
+          </div>
+          
+          <div className="footer-badges">
+            <span className="badge">
+              <i className="fas fa-shield-alt"></i> ISO 27001 Certified
+            </span>
+            <span className="badge">
+              <i className="fab fa-google"></i> Google Partner
+            </span>
+            <span className="badge">
+              <i className="fas fa-lock"></i> GDPR Compliant
+            </span>
           </div>
         </div>
       </div>
-
-      {showBackToTop && (
-        <button className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
-          ↑
-        </button>
-      )}
     </footer>
   );
 };
