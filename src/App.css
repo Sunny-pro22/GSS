@@ -193,3 +193,18 @@
     transition-duration: 0.01ms !important;
   }
 }
+/* Global fix for pointer events */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure all interactive elements are above custom cursor */
+button, a, input, textarea, select, [role="button"] {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fix for any potential overlay issues */
+[class*="overlay"] {
+  pointer-events: auto !important;
+}

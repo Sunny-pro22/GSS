@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTheme } from '../Hooks/useTheme';
 import ThemeToggle from './ThemeToggle';
@@ -9,6 +9,7 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const { isDarkTheme } = useTheme();
   const location = useLocation();
+  const headerRef = useRef(null);
 
   // Close menu on route change
   useEffect(() => {
@@ -20,17 +21,32 @@ const Navigation = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    // Prevent scrolling when menu is open
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
+  useEffect(() => {
+    // Don't set body overflow to hidden - this breaks clicking
+    // Instead, use CSS to handle the body scroll
+    const body = document.body;
+    
+    if (isMenuOpen) {
+      body.classList.add('no-scroll');
+      // Prevent touch scrolling on mobile
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+    } else {
+      body.classList.remove('no-scroll');
+      body.style.position = '';
+      body.style.width = '';
+    }
+
+    return () => {
+      body.classList.remove('no-scroll');
+      body.style.position = '';
+      body.style.width = '';
     };
   }, [isMenuOpen]);
 
@@ -51,7 +67,10 @@ const Navigation = () => {
 
   return (
     <>
-      <header className={`app-header ${scrolled ? 'scrolled' : ''}`}>
+      <header 
+        ref={headerRef}
+        className={`app-header ${scrolled ? 'scrolled' : ''}`}
+      >
         <div className="header-content">
           <div className="logo-section">
             <NavLink to="/" className="logo-link" onClick={closeMenu}>
@@ -72,6 +91,7 @@ const Navigation = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                onClick={closeMenu}
               >
                 {item.label}
               </NavLink>
@@ -92,6 +112,7 @@ const Navigation = () => {
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
+            type="button"
           >
             <span></span>
             <span></span>
@@ -104,16 +125,24 @@ const Navigation = () => {
       <div 
         className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}
         onClick={closeMenu}
+        role="button"
+        tabIndex={0}
+        aria-label="Close menu"
+        onKeyDown={(e) => e.key === 'Enter' && closeMenu()}
       />
 
       {/* Mobile Sidebar Menu */}
-      <div className={`mobile-sidebar ${isMenuOpen ? 'active' : ''}`}>
+      <aside 
+        className={`mobile-sidebar ${isMenuOpen ? 'active' : ''}`}
+        aria-hidden={!isMenuOpen}
+      >
         <div className="mobile-sidebar-header">
           <h2 className="mobile-sidebar-title">Menu</h2>
           <button 
             className="mobile-menu-toggle active"
             onClick={closeMenu}
             aria-label="Close menu"
+            type="button"
           >
             <span></span>
             <span></span>
@@ -150,7 +179,7 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 };
