@@ -1,11 +1,26 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './CustomCursor.css';
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);
   const cursorDotRef = useRef(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    // Check if device supports touch
+    const checkTouchDevice = () => {
+      return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+    };
+
+    setIsTouchDevice(checkTouchDevice());
+  }, []);
+
+  useEffect(() => {
+    // Don't initialize cursor for touch devices
+    if (isTouchDevice) return;
+
     const cursor = cursorRef.current;
     const cursorDot = cursorDotRef.current;
 
@@ -56,7 +71,12 @@ const CustomCursor = () => {
       document.removeEventListener('mouseover', handleMouseEnter);
       document.removeEventListener('mouseout', handleMouseLeave);
     };
-  }, []);
+  }, [isTouchDevice]);
+
+  // Don't render cursor on touch devices
+  if (isTouchDevice) {
+    return null;
+  }
 
   return (
     <>
