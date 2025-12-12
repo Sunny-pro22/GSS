@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
-import { useTheme } from '../Hooks/useTHEME';
+import { useTheme } from '../Hooks/useTheme';
 import InteractiveMachine from './InteractiveMachine';
 
 const Hero3DScene = () => {
