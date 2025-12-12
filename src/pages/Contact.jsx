@@ -190,9 +190,9 @@ const Contact = () => {
               </div>
               <h2>📍 Business Hours</h2>
               <div className="contact-details">
-                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM EST</p>
-                <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM EST</p>
-                <p><strong>Sunday:</strong> Emergency Support Only</p>
+                <p><strong>Monday - Friday:</strong>6 AM - 11 PM</p>
+                <p><strong>Saturday:</strong> 9 AM - 11 PM</p>
+                <p><strong>Sunday:</strong>24/7 </p>
               </div>
             </div>
 
@@ -202,10 +202,10 @@ const Contact = () => {
               </div>
               <h2>📞 Contact Info</h2>
               <div className="contact-details">
-                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                <p><strong>Email:</strong> info@brptechnology.com</p>
-                <p><strong>Support:</strong> support@brptechnology.com</p>
-                <p><strong>Sales:</strong> sales@brptechnology.com</p>
+                <p><strong>Phone:</strong> +(91) 7042576047</p>
+                <p><strong>Email:</strong> team@brptechnology.com</p>
+                {/* <p><strong>Support:</strong> support@brptechnology.com</p>
+                <p><strong>Sales:</strong> sales@brptechnology.com</p> */}
               </div>
             </div>
 
@@ -405,15 +405,15 @@ const Contact = () => {
             <div className="contact-alternatives">
               <h3>Other Ways to Connect</h3>
               <div className="alternative-links">
-                <a href="mailto:info@brptechnology.com" className="alternative-link">
+                <a href="mailto:team@brptechnology.com" className="alternative-link">
                   <i className="fas fa-envelope"></i>
                   <span>Email Us Directly</span>
                 </a>
-                <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="alternative-link">
+                <a href="https://wa.me/7042576047" target="_blank" rel="noopener noreferrer" className="alternative-link">
                   <i className="fab fa-whatsapp"></i>
                   <span>WhatsApp Chat</span>
                 </a>
-                <a href="tel:+15551234567" className="alternative-link">
+                <a href="tel:+91 7042576047" className="alternative-link">
                   <i className="fas fa-phone"></i>
                   <span>Call Now</span>
                 </a>
@@ -427,8 +427,8 @@ const Contact = () => {
             <div className="map-content">
               <i className="fas fa-map-marker-alt"></i>
               <h3>Our Location</h3>
-              <p>123 Business Street, Tech City, TC 12345</p>
-              <p>United States</p>
+              <p>Dwarka Sewak Park</p>
+              <p>DELHI</p>
               <a 
                 href="https://maps.google.com/?q=123+Business+Street,+Tech+City,+TC+12345" 
                 target="_blank" 
@@ -446,15 +446,15 @@ const Contact = () => {
               <tbody>
                 <tr>
                   <td>Monday - Friday</td>
-                  <td>9:00 AM - 6:00 PM EST</td>
+                  <td>6:00 AM - 11 PM EST</td>
                 </tr>
                 <tr>
                   <td>Saturday</td>
-                  <td>10:00 AM - 2:00 PM EST</td>
+                  <td>9:00 AM - 11 PM EST</td>
                 </tr>
                 <tr>
                   <td>Sunday</td>
-                  <td>Emergency Support Only</td>
+                  <td>24/7</td>
                 </tr>
                 <tr>
                   <td>Holidays</td>
@@ -471,7 +471,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="formspree-instructions">
+        {/* <div className="formspree-instructions">
           <div className="instruction-card">
             <i className="fas fa-bell"></i>
             <h3>Formspree Notifications</h3>
@@ -503,7 +503,7 @@ const Contact = () => {
               <i className="fas fa-external-link-alt"></i> Go to Formspree Dashboard
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

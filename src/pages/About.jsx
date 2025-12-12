@@ -74,10 +74,10 @@ const About = () => {
           </div>
 
           <div className="about-stats">
-            <div className="stat-item">
+            {/* <div className="stat-item">
               <div className="stat-number">500+</div>
               <div className="stat-label">Businesses Served</div>
-            </div>
+            </div> */}
             <div className="stat-item">
               <div className="stat-number">95%</div>
               <div className="stat-label">Client Satisfaction</div>

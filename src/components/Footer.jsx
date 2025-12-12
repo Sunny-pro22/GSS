@@ -106,10 +106,10 @@ const Footer = () => {
             </div>
             
             <div className="contact-info">
-              <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
-              <p><i className="fas fa-envelope"></i> info@brptechnology.com</p>
-              <p><i className="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</p>
-              <p><i className="fas fa-map-marker-alt"></i> 123 Business Street, Tech City</p>
+              <p><i className="fas fa-phone"></i> +91 7042576047</p>
+              <p><i className="fas fa-envelope"></i> team@brptechnology.com</p>
+              <p><i className="fas fa-clock"></i> Mon-Fri: 6AM - 11PM EST</p>
+              <p><i className="fas fa-map-marker-alt"></i> Dwarka Delhi</p>
             </div>
           </div>
         </div>

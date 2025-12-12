@@ -65,10 +65,10 @@ const Home = () => {
           </div>
           
           <div className="home-stats">
-            <div className="stat-item">
+            {/* <div className="stat-item">
               <div className="stat-number">500+</div>
               <div className="stat-label">Businesses Served</div>
-            </div>
+            </div> */}
             <div className="stat-item">
               <div className="stat-number">24/7</div>
               <div className="stat-label">Support</div>
