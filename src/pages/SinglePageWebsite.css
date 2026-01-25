@@ -1,0 +1,281 @@
+.single-page-website {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.page-section {
+  min-height: 100vh;
+  padding-top: 80px;
+  position: relative;
+}
+
+/* Update existing CSS for single page layout */
+.home-page {
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+.services-page,
+.about-page,
+.contact-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+/* Add smooth scrolling to html */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Update section padding for better spacing */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-header h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Hero visual placeholder */
+.hero-visual-placeholder {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-gears {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.gear {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gradient);
+  animation: rotateGear linear infinite;
+}
+
+.gear.large {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 10s;
+}
+
+.gear.medium {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  left: 30%;
+  animation-duration: 8s;
+  animation-direction: reverse;
+}
+
+.gear.small {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  right: 30%;
+  animation-duration: 6s;
+}
+
+.gear-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-conic-gradient(
+      from 0deg,
+      var(--bg-primary) 0deg 10deg,
+      transparent 10deg 20deg
+    );
+  border-radius: 50%;
+  mask: radial-gradient(transparent 50%, black 51%);
+}
+
+@keyframes rotateGear {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Service Card Updates */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.service-card .emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card li {
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.service-card li:last-child {
+  border-bottom: none;
+}
+
+/* CTA Button Updates */
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-primary);
+  border: 2px solid var(--accent-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Responsive Updates */
+@media (max-width: 1024px) {
+  .home-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-visual-placeholder {
+    height: 400px;
+    margin-top: 2rem;
+  }
+  
+  .floating-gears {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-section {
+    padding-top: 60px;
+  }
+  
+  .home-page {
+    padding-top: 100px;
+  }
+  
+  .section-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-visual-placeholder {
+    height: 300px;
+  }
+  
+  .floating-gears {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .hero-visual-placeholder {
+    height: 250px;
+  }
+}
