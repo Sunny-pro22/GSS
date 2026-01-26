@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../Hooks/useTheme';
 import FloatingGearsBackground from './FloatingGearsBackground';
 import ThemeToggle from './ThemeToggle';
 import './Footer.css';
