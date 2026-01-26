@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../Hooks/useTheme';
 import FloatingGearsBackground from '../components/FloatingGearsBackground';
 import './ContactSection.css';
 
