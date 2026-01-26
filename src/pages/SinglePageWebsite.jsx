@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../Hooks/useSEO';
 import FloatingGearsBackground from '../components/FloatingGearsBackground';
 import HeroSection from './HomeSection';
 import ServicesSection from './ServicesSection';
