@@ -29,7 +29,7 @@ const ServicesSection = () => {
       icon: 'fas fa-chart-line',
       keywords: ['SEO Services', 'Digital Marketing', 'Search Engine Optimization', 'Organic Traffic'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      stats: { projects: '250+', success: '95%', duration: '1-3' }
+      stats: { projects: '20+', success: '95%', duration: '1-3' }
     },
     {
       id: 'web',
@@ -47,7 +47,7 @@ const ServicesSection = () => {
       icon: 'fas fa-laptop-code',
       keywords: ['Web Development', 'Website Design', 'E-commerce', 'Responsive Design'],
       image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      stats: { projects: '300+', success: '98%', duration: '2-4' }
+      stats: { projects: '30+', success: '98%', duration: '2-4' }
     },
     {
       id: 'app',
@@ -65,7 +65,7 @@ const ServicesSection = () => {
       icon: 'fas fa-mobile-alt',
       keywords: ['App Development', 'Mobile Applications', 'iOS', 'Android Apps'],
       image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      stats: { projects: '150+', success: '96%', duration: '3-6' }
+      stats: { projects: '10+', success: '96%', duration: '3-6' }
     },
     {
       id: 'google',
@@ -83,7 +83,7 @@ const ServicesSection = () => {
       icon: 'fab fa-google',
       keywords: ['Google Business', 'Local SEO', 'Google Maps', 'Business Profile'],
       image: 'https://images.unsplash.com/photo-1551836026-d5c2c4c21c93?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      stats: { projects: '400+', success: '97%', duration: '1-2' }
+      stats: { projects: '20+', success: '97%', duration: '1-2' }
     },
     {
       id: 'social',
@@ -101,7 +101,7 @@ const ServicesSection = () => {
       icon: 'fas fa-users',
       keywords: ['Social Media Marketing', 'Facebook Ads', 'Instagram Marketing', 'Social Media Management'],
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      stats: { projects: '200+', success: '94%', duration: 'Ongoing' }
+      stats: { projects: '40+', success: '94%', duration: 'Ongoing' }
     },
     {
       id: 'ppc',
@@ -119,7 +119,7 @@ const ServicesSection = () => {
       icon: 'fas fa-bullhorn',
       keywords: ['PPC Services', 'Google Ads', 'Facebook Advertising', 'Paid Marketing'],
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      stats: { projects: '180+', success: '92%', duration: 'Monthly' }
+      stats: { projects: '10+', success: '92%', duration: 'Monthly' }
     }
   ];
 
@@ -199,7 +199,7 @@ const ServicesSection = () => {
             <div className="stat-card">
               <div className="stat-icon">🎯</div>
               <div className="stat-content">
-                <h3>500+</h3>
+                <h3>50+</h3>
                 <p>Projects Delivered</p>
               </div>
             </div>
@@ -213,7 +213,7 @@ const ServicesSection = () => {
             <div className="stat-card">
               <div className="stat-icon">🚀</div>
               <div className="stat-content">
-                <h3>50+</h3>
+                <h3>20+</h3>
                 <p>Expert Team</p>
               </div>
             </div>
@@ -289,7 +289,7 @@ const ServicesSection = () => {
               />
               <div className="image-badge">
                 <span className="badge-dot"></span>
-                <span>Trusted by 500+ Businesses</span>
+                <span>Trusted by 50+ Businesses</span>
               </div>
             </div>
           </div>

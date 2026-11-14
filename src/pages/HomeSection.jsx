@@ -208,7 +208,7 @@ const HeroSection = () => {
               {/* Stats */}
               <div className="hero-stats">
                 <div className="stat">
-                  <span className="stat-number">500+</span>
+                  <span className="stat-number">50+</span>
                   <span className="stat-label">Projects</span>
                 </div>
                 <div className="stat">
@@ -216,7 +216,7 @@ const HeroSection = () => {
                   <span className="stat-label">Satisfaction</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">50+</span>
+                  <span className="stat-number">20+</span>
                   <span className="stat-label">Experts</span>
                 </div>
                 <div className="stat">
@@ -347,7 +347,7 @@ const HeroSection = () => {
                   
                   <div className="dashboard-footer">
                     <div className="footer-stat">
-                      <span className="stat-value">250+</span>
+                      <span className="stat-value">70+</span>
                       <span className="stat-label">Clients</span>
                     </div>
                     <div className="footer-stat">

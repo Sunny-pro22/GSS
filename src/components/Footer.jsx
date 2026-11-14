@@ -21,17 +21,17 @@ const Footer = () => {
               </div>
               <div>
                 <h2>BRP TECHNOLOGY</h2>
-                <span className="logo-subtitle">PVT LIMITED</span>
+                
                 <p className="footer-tagline">
                   Helping businesses grow through digital excellence and strategic optimization.
                 </p>
               </div>
             </div>
             
-            <div className="footer-theme">
+            {/* <div className="footer-theme">
               <ThemeToggle />
               <span>Switch to {isDarkTheme ? 'Light' : 'Dark'} Theme</span>
-            </div>
+            </div> */}
           </div>
           
           <div className="footer-section">
@@ -116,7 +116,7 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <div className="copyright">
-            <p>&copy; Copyright 2025-2028 BRP Technology Pvt Limited. All rights reserved.</p>
+            <p>&copy; Copyright 2025-2028 BRP Technology. All rights reserved.</p>
             <p className="copyright-sub">Business Growth Specialists | Digital Excellence Partners</p>
           </div>
           
